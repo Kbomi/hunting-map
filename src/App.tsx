@@ -110,7 +110,7 @@ function App() {
       map.setBounds(bounds);
       map.setLevel(2);
     }
-  }, [location]);
+  }, []);
 
   return (
     <>
