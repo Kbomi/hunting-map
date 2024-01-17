@@ -1,10 +1,4 @@
-import React, {
-  ReactNode,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 const data = require("./data.json");
 
