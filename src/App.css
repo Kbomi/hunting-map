@@ -1,38 +1,104 @@
-.App {
+body {
+  background: #222;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+#root {
+  padding-top: 2rem;
+}
+
+h1 {
+  margin: 0 0 2rem 0;
   text-align: center;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+select {
+  display: block;
+  min-width: 350px;
+  margin: 0 auto 2rem;
+  padding: 0.8rem 3.5rem 0.8rem 1rem;
+  border: thin solid #fff;
+  border-radius: 6px;
+  background-color: white;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1rem + 2px),
+    calc(100% - 15px) calc(1rem + 2px), calc(100% - 2.5rem) 0.5rem;
+  background-size: 5px 5px, 5px 5px, 1px 1.7rem;
+  background-repeat: no-repeat;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+select:focus {
+  background-image: linear-gradient(45deg, green 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, green 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px) 1rem, calc(100% - 20px) 1rem,
+    calc(100% - 2.5rem) 0.5rem;
+  background-size: 5px 5px, 5px 5px, 1px 1.5rem;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+#info {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  padding: 5px 10px;
+  background: #fff;
+  border: 1px solid #ce5100;
+  transform: translate(-49%, -250%);
+}
+
+#info .title {
+  margin: 0;
+}
+
+#info::after {
+  content: "";
+  position: absolute;
+  margin-left: -12px;
+  left: 50%;
+  bottom: -12px;
+  width: 22px;
+  height: 12px;
+  background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png);
+}
+
+.background-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/public/images/background-curved.png") center;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    font-size: 14px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  select {
+    min-width: auto;
+    width: calc(100% - 40px);
   }
 }
