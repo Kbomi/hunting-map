@@ -19,6 +19,14 @@ type Location = {
 
 function App() {
   const [location, setLocation] = useState("hongdae");
+  const imageSrc = "/images/fox-mark.svg";
+  const options = {
+    center: new window.kakao.maps.LatLng(
+      37.550571261875426,
+      126.92215595376915
+    ),
+    level: 1,
+  };
 
   useEffect(() => {
     const selectLocation: Location[] = data[location];
@@ -27,20 +35,10 @@ function App() {
     if (mapContainer) {
       const { kakao } = window;
 
-      const options = {
-        center: new window.kakao.maps.LatLng(
-          37.550571261875426,
-          126.92215595376915
-        ),
-        level: 1,
-      };
-
       const map = new kakao.maps.Map(mapContainer, options); // 지도 그리기
 
       const zoomControl = new kakao.maps.ZoomControl(); // 컨트롤 추가
       map.addControl(zoomControl, kakao.maps.ControlPosition.BOTTOMRIGHT);
-
-      const imageSrc = "/images/fox-mark.svg";
 
       // 지도를 재설정할 범위정보를 가지고 있을 LatLngBounds 객체를 생성합니다
       const bounds = new kakao.maps.LatLngBounds();
@@ -110,7 +108,7 @@ function App() {
       map.setBounds(bounds);
       map.setLevel(2);
     }
-  }, []);
+  }, [location]);
 
   return (
     <>
