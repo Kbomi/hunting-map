@@ -123,6 +123,24 @@ function App() {
       </select>
       <div id="map" style={{ height: "600px" }}></div>
       <div className="background-line"></div>
+      <footer>
+        <ul>
+          <li>
+            <a href="mailto: 93rlaqhal@gmail.com">📨 93rlaqhal@gmail.com</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/%EB%B3%B4%EB%AF%B8-%EA%B9%80-126326207/">
+              🤳 링크드인
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/Kbomi">🐱 https://github.com/Kbomi</a>
+          </li>
+          <li>
+            <a href="https://blog.naver.com/93rlaqhal">👋 네이버 블로그</a>
+          </li>
+        </ul>
+      </footer>
     </>
   );
 }
